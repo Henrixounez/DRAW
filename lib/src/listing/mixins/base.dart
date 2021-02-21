@@ -155,4 +155,15 @@ mixin BaseListingMixin {
           String after,
           Map<String, String> params}) =>
       _buildTimeFilterGenerator(limit, after, params, 'top', timeFilter);
+
+  /// Returns a [Stream] of the rising comments and submissions.
+  ///
+  /// `limit` is the maximum number of objects returned by Reddit per request
+  /// (the default is 100). If provided, `after` specifies from which point
+  /// Reddit will return objects of the requested type. `params` is a set of
+  /// additional parameters that will be forwarded along with the request.
+  Stream<UserContent> rising(
+          {int limit, String after, Map<String, String> params}) =>
+      _buildGenerator(limit, after, params, 'rising');
+
 }
