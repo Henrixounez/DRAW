@@ -200,6 +200,9 @@ class Submission extends SubmissionRef
   /// Is this [Submission] a video.
   bool get isVideo => data['is_video'];
 
+  /// Is this [Submission] a gallery.
+  bool get isGallery => data['is_gallery'] ?? false;
+
   /// Text of the flair set for this [Submission].
   ///
   /// May return `null` if the submission has no flair.
