@@ -90,6 +90,8 @@ class Redditor extends RedditorRef with RedditBaseInitializedMixin {
   DateTime get suspensionExpirationUtc =>
       GetterUtils.dateTimeOrNull(data['suspension_expiration_utc']);
 
+  String get icon => data['snoovatar_size'] != null ? data['snoovatar_img'] : data['icon_img'];
+
   Redditor.parse(Reddit reddit, Map data) : super(reddit) {
     if (!data.containsKey('name') &&
         !(data.containsKey('kind') &&
