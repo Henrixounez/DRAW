@@ -324,6 +324,9 @@ class Submission extends SubmissionRef
   /// Has this [Submission] been visited by the current [User].
   bool get visited => data['visited'];
 
+  /// If User [Redditor] have upvoted / downvoted the [Submission]
+  bool get likes => data['likes'];
+
   SubmissionModeration get mod {
     _mod ??= SubmissionModeration._(this);
     return _mod;
